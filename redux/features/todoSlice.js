@@ -15,10 +15,13 @@ const todoSlice = createSlice({
       },
       removeTodo: (state, action) => {
          return state.filter(todo => todo.id !== action.payload);
+      },
+      loadFromStorage: (state, action) => {
+         return action.payload;
       }
    }
 })
 
-export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodo, loadFromStorage } = todoSlice.actions;
 
 export default todoSlice.reducer;
